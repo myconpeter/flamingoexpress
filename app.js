@@ -7,7 +7,7 @@ const session = require('express-session');
 const flash = require("connect-flash");
 
 
-const PORT  = process.env.PORT  || 8000;
+const PORT  = process.env.PORT  || 4000;
 
 
 //passport config:
@@ -23,6 +23,8 @@ const investPlanscRoutes = require("./routes/investplansc");
 const withdrawalRoutes = require("./routes/withdraw");
 const resetPasswordRoute = require("./routes/resetpassword");
 const investedMatureRoute = require("./routes/investmature");
+
+
 
 
 // mongodb connection
@@ -43,6 +45,14 @@ mongoose.connect('mongodb://localhost/flamingo', {
  })
  .then(() => console.log('connected to db'))
 .catch((err)=> console.log(err)); 
+
+
+
+
+// mongoose.connect('mongodb+srv://flamingo:michealpeter@cluster0.pa829.mongodb.net/flamingo?retryWrites=true&w=majority', {
+//   useNewUrlParser: true,
+//   useUnifiedTopology: true,
+// });
 
 //EJS
 app.set('view engine','ejs');
